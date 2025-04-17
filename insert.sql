@@ -32,6 +32,21 @@ INSERT INTO Market_Prices (crop_id, location, price_per_kg, date_recorded) VALUE
 (4, 'Kigali Market', 4.00, '2023-06-01'),
 (5, 'Addis Ababa Market', 5.50, '2023-06-01');
 
+-- Insert initial price history records
+INSERT INTO Market_Price_History (
+    market_id,
+    crop_id,
+    location,
+    old_price,
+    new_price,
+    date_changed
+) VALUES
+(1, 1, 'Nairobi Market', 2.30, 2.50, '2023-05-15'),
+(2, 2, 'Kampala Market', 2.80, 3.00, '2023-05-15'),
+(3, 3, 'Dar es Salaam Market', 2.50, 2.75, '2023-05-15'),
+(4, 4, 'Kigali Market', 3.80, 4.00, '2023-05-15'),
+(5, 5, 'Addis Ababa Market', 5.20, 5.50, '2023-05-15');
+
 -- Insert sample data into Weather Data table
 INSERT INTO Weather_Data (location, temperature, rainfall, humidity, date_recorded) VALUES
 ('Nairobi', 25.50, 50.00, 65.00, '2023-06-01'),

@@ -57,3 +57,35 @@ SELECT
     (scd.quantity * scd.price_sold) AS total_value
 FROM Supply_Chain_Distribution scd
 JOIN Crops c ON scd.crop_id = c.crop_id;
+
+-- View 5: Detailed Weather Impact Analysis
+CREATE VIEW WeatherImpactAnalysisDetailed AS
+SELECT 
+    w.weather_id,
+    w.location AS weather_location,
+    w.date_recorded,
+    w.temperature,
+    w.rainfall,
+    w.humidity,
+    c.name AS crop_name,
+    c.ideal_conditions,
+    CASE 
+        WHEN w.temperature BETWEEN 20 AND 30 AND w.rainfall BETWEEN 50 AND 200 THEN 'Ideal'
+        WHEN w.temperature BETWEEN 15 AND 35 AND w.rainfall BETWEEN 30 AND 300 THEN 'Acceptable'
+        ELSE 'Poor'
+    END AS weather_suitability,
+    CASE 
+        WHEN w.temperature BETWEEN 20 AND 30 THEN 'Ideal Temperature'
+        WHEN w.temperature BETWEEN 15 AND 35 THEN 'Acceptable Temperature'
+        ELSE 'Poor Temperature'
+    END AS temperature_suitability,
+    CASE 
+        WHEN w.rainfall BETWEEN 50 AND 200 THEN 'Ideal Rainfall'
+        WHEN w.rainfall BETWEEN 30 AND 300 THEN 'Acceptable Rainfall'
+        ELSE 'Poor Rainfall'
+    END AS rainfall_suitability
+FROM Weather_Data w
+CROSS JOIN Crops c;
+
+SELECT * from supply_chain_distribution;
+ sele
