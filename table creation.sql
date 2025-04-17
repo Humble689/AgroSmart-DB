@@ -51,7 +51,7 @@ CREATE TABLE Weather_Data (
     humidity DECIMAL(5,2) NOT NULL,
     date_recorded DATE NOT NULL
 );
-
+ 
 -- Create Supply Chain & Distribution table
 CREATE TABLE Supply_Chain_Distribution (
     distribution_id INT PRIMARY KEY AUTO_INCREMENT,
