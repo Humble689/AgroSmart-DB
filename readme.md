@@ -1,6 +1,7 @@
 # SmartAgro Database System
 
 This project implements a comprehensive database system for agricultural management, focusing on farmers, crops, market prices, weather data, and supply chain distribution.
+This project implements a comprehensive database system for agricultural management, focusing on farmers, crops, market prices, weather data, and supply chain distribution.
 
 ## Database Structure
 
